@@ -8,13 +8,11 @@ platform:
 
 steps:
   - name: should-pass
-    image: busybox
     commands:
       - echo -n "Hello from Drone" >> test1.txt
       - echo -n "Hello from Drone, again" >> /Users/_drone/test2.txt
 
   - name: should-fail
-    image: busybox
     commands:
       - echo -n "Hello from Nefarious Drone" >> /Users/sean/test3.txt
 
