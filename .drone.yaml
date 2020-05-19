@@ -9,8 +9,10 @@ platform:
 steps:
   - name: should-pass
     commands:
-      - echo -n "Hello from Drone" >> test1.txt
-      - echo -n "Hello from Drone, again" >> /Users/_drone/test2.txt
+      - ls
+      - cat .drone.yaml
+      - echo "Hello from Drone" >> test1.txt
+      - echo "Hello from Drone, again" >> /Users/_drone/test2.txt
 
   - name: should-fail
     commands:
