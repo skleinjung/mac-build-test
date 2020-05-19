@@ -9,9 +9,10 @@ platform:
 steps:
   - name: should-pass
     commands:
+      - pwd
       - ls
       - cat .drone.yaml
-      - echo "Hello from Drone" >> test1.txt
+      - echo "Hello from Drone (temp)" >> test1.txt
       - echo "Hello from Drone, again" >> /Users/_drone/test2.txt
 
   - name: should-fail
