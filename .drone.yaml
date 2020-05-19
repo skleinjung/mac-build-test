@@ -1,0 +1,25 @@
+kind: pipeline
+type: exec
+name: test-installation
+
+platform:
+  os: darwin
+  arch: amd64
+
+steps:
+  - name: should-pass
+    image: busybox
+    commands:
+      - echo -n "Hello from Drone" >> test1.txt
+      - echo -n "Hello from Drone, again" >> /Users/_drone/test2.txt
+
+  - name: should-fail
+    image: busybox
+    commands:
+      - echo -n "Hello from Nefarious Drone" >> /Users/sean/test3.txt
+
+trigger:
+  branch:
+    - master
+  event:
+    - push
